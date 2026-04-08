@@ -1,0 +1,91 @@
+@font-face {
+  font-family: "Inria Sans";
+  src: url("/src/assets/fonts/InriaSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inria Sans";
+  src: url("/src/assets/fonts/InriaSans-LightItalic.ttf") format("truetype");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inria Sans";
+  src: url("/src/assets/fonts/InriaSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inria Sans";
+  src: url("/src/assets/fonts/InriaSans-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inria Sans";
+  src: url("/src/assets/fonts/InriaSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inria Sans";
+  src: url("/src/assets/fonts/InriaSans-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Utility classes for Inria Sans font family */
+.font-inria {
+  font-family: "Inria Sans", Arial, sans-serif;
+}
+
+/* Light (300) */
+.font-light {
+  font-family: "Inria Sans", Arial, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.font-light-italic {
+  font-family: "Inria Sans", Arial, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Regular (400) */
+.font-regular {
+  font-family: "Inria Sans", Arial, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-regular-italic {
+  font-family: "Inria Sans", Arial, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Bold (700) */
+.font-bold {
+  font-family: "Inria Sans", Arial, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.font-bold-italic {
+  font-family: "Inria Sans", Arial, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}

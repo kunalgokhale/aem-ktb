@@ -1,0 +1,26 @@
+@use "./tokens" as *;
+
+@each $i in $space-scale {
+  $v: $i * $space-unit;
+
+  .p-#{$i} { padding: $v; }
+  .pt-#{$i} { padding-top: $v; }
+  .pr-#{$i} { padding-right: $v; }
+  .pb-#{$i} { padding-bottom: $v; }
+  .pl-#{$i} { padding-left: $v; }
+
+  .px-#{$i} { padding-left: $v; padding-right: $v; }
+  .py-#{$i} { padding-top: $v; padding-bottom: $v; }
+
+  .m-#{$i} { margin: $v; }
+  .mt-#{$i} { margin-top: $v; }
+  .mr-#{$i} { margin-right: $v; }
+  .mb-#{$i} { margin-bottom: $v; }
+  .ml-#{$i} { margin-left: $v; }
+
+  .mx-#{$i} { margin-left: $v; margin-right: $v; }
+  .my-#{$i} { margin-top: $v; margin-bottom: $v; }
+
+  /* gap */
+  .gap-#{$i} { gap: $v; }
+}

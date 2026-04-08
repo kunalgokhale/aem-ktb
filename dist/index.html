@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>KTB Demo</title>
+
+    <!-- Global styles -->
+    <link rel="stylesheet" href="main.css" />
+  </head>
+
+  <body>
+    <!-- Page Assembly (AEM-style stacking) -->
+    <div id="header">
+<!-- Inside your header component -->
+<header class="header">
+  <div class="top-header">
+    <div class="container flex flex-center flex-between">
+      <div class="flex gap-4">
+        <a href="#" class="top-link active">Persoanl</a>
+        <a href="#" class="top-link">SME</a>
+      </div>
+      <div class="flex gap-4">
+        <a href="#" class="top-link">Financial Partner</a>
+        <a href="#" class="top-link">Investor Relations</a>
+      </div>
+    </div>
+  </div>
+  <div class="bottom-header">
+    <div class="container flex flex-between flex-center">
+      <!-- Logo -->
+      <div class="flex flex-left gap-2 logo-wrapper">
+        <img id="logo" src="assets/images/logo-white.png" alt="" />
+      </div>
+      <div class="flex gap-6">
+        <!-- Desktop Nav -->
+        <nav class="header__nav flex">
+          <ul class="main-menu-list">
+            <li class="main-menu-item">
+              <a href="#" class="nav-link">Deposit</a>
+              <div class="sub-menu-wrapper">
+                <div class="content">
+                  <ul class="sub-menu-list">
+                    <li class="sub-menu-item col-header">
+                      <a href="#" class="nav-link">Product</a>
+                    </li>
+                    <li class="sub-menu-item">
+                      <a href="#" class="nav-link">Current Account</a>
+                    </li>
+                    <li class="sub-menu-item">
+                      <a href="#" class="nav-link">Savings Account</a>
+                    </li>
+                    <li class="sub-menu-item">
+                      <a href="#" class="nav-link">Fixed Deposit Account</a>
+                    </li>
+                    <li class="sub-menu-item">
+                      <a href="#" class="nav-link">Online Krungthai NEXT</a>
+                    </li>
+                    <li class="sub-menu-item">
+                      <a href="#" class="nav-link">Tax Free Time Deposits</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="main-menu-item">
+              <a href="#" class="nav-link">Card</a>
+              <div class="sub-menu-wrapper">
+                <div class="content">
+                  <ul class="sub-menu-list">
+                    <li class="sub-menu-item col-header">
+                      <a href="#" class="nav-link">Product</a>
+                    </li>
+                    <li class="sub-menu-item">
+                      <a href="#" class="nav-link">Debit Card</a>
+                    </li>
+                    <li class="sub-menu-item">
+                      <a href="#" class="nav-link">Krungthai Travel Visa Platinum Card</a>
+                    </li>
+                    <li class="sub-menu-item">
+                      <a href="#" class="nav-link">Krungthai Travel UnionPay Debit Card</a>
+                    </li>
+                    <li class="sub-menu-item">
+                      <a href="#" class="nav-link">Cash Card and Top Up Card</a>
+                    </li>
+                  </ul>
+                  <ul class="sub-menu-list">
+                    <li class="sub-menu-item col-header">
+                      <a href="#" class="nav-link">Services</a>
+                    </li>
+                    <li class="sub-menu-item">
+                      <a href="#" class="nav-link">Krungthai 3-D Secure</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div class="flex gap-2">
+        <div class="cta">
+          <a href="#" class="button button-secondary download-cta">Krungthai NEXT
+            <img src="assets/images/download.png" alt="Download">
+          </a>
+        </div>
+        <div class="mobile-menu-toggle-wrapper">
+          <button class="mobile-menu-toggle button button-transparent mm-open">
+            <img src="assets/images/menu.png" alt="menu" class="icon-md" data-mm-open="true" />
+          </button>
+           <button class="mobile-menu-toggle button button-transparent mm-close" aria-label="Close" style="display: none;">
+            <img src="assets/images/close.png" alt="menu" class="icon-md" data-mm-open="true" />
+          </button>
+        </div>
+      </div>
+  
+      <div class="mobile-menu-wrapper" aria-hidden="true">
+        <div class="mm-top-header flex flex-center">
+          <div class="header-item flex flex-center flex-col flex-1 gap-1">
+            <img src="assets/images/location.svg" alt="">
+            <span>Serice Points</span>
+          </div>
+          <div class="header-item flex flex-center flex-col flex-1 gap-1">
+            <img src="assets/images/search.svg" alt="">
+            <span>Find Information</span>
+          </div>
+          <div class="header-item flex flex-center flex-col flex-1 gap-1">
+            <img src="assets/images/contact-support.svg" alt="">
+            <span>Contact Us</span>
+          </div>
+        </div>
+        <div class="mm-viewport">
+          <!-- Level 1 (root) -->
+          <section class="mm-panel mm-level-1" aria-label="Main menu">
+            <ul class="mm-list">
+              <li><button class="mm-item" data-submenu="personal"><span>Personal</span><span class="mm-chevron"><img
+                      src="assets/images/chevron-right.png" alt=""></span></button></li>
+              <li><button class="mm-item" data-submenu="sme"><span>SME</span><span class="mm-chevron"><img
+                      src="assets/images/chevron-right.png" alt=""></span></button></li>
+              <li><button class="mm-item" data-submenu="corporate"><span>Corporate</span><span class="mm-chevron"><img
+                      src="assets/images/chevron-right.png" alt=""></span></button></li>
+              <li><button class="mm-item" data-submenu="financial-partner"><span>Financial Partner</span><span
+                    class="mm-chevron"><img src="assets/images/chevron-right.png" alt=""></span></button></li>
+              <li><button class="mm-item" data-submenu="investor-relations"><span>Investor Relations</span><span
+                    class="mm-chevron"><img src="assets/images/chevron-right.png" alt=""></span></button></li>
+              <li><button class="mm-item" data-submenu="sustainability"><span>Sustainability</span><span
+                    class="mm-chevron"><img src="assets/images/chevron-right.png" alt=""></span></button></li>
+              <li><button class="mm-item" data-submenu="about-us"><span>About Us</span><span class="mm-chevron"><img
+                      src="assets/images/chevron-right.png" alt=""></span></button></li>
+              <li><button class="mm-item" data-submenu="contact-us"><span>Contact Us</span><span class="mm-chevron"><img
+                      src="assets/images/chevron-right.png" alt=""></span></button></li>
+              <li><button class="mm-item" data-submenu="lang"><span>EN</span><span class="mm-chevron"><img
+                      src="assets/images/chevron-right.png" alt=""></span></button></li>
+            </ul>
+          </section>
+  
+          <!-- Level 2 (submenu) -->
+          <section class="mm-panel mm-level-2" aria-label="Submenu">
+            <div class="mm-header">
+              <button class="mm-back" aria-label="Back"><img src="assets/images/chevron-left-white.png" alt=""></button>
+              <div class="mm-title">Menu</div>
+            </div>
+  
+            <!-- Personal submenu -->
+            <ul class="mm-list" data-submenu="personal">
+              <li><a href="#" class="mm-link">Home</a></li>
+              <li><a href="#" class="mm-link">Deposit</a></li>
+              <li><a href="#" class="mm-link">Card</a></li>
+              <li><a href="#" class="mm-link">Insurance</a></li>
+              <li><a href="#" class="mm-link">Investment</a></li>
+              <li><a href="#" class="mm-link">Services</a></li>
+              <li><a href="#" class="mm-link">E-Banking</a></li>
+              <li><a href="#" class="mm-link">Krungthai Wealth</a></li>
+              <li><a href="#" class="mm-link">NPA</a></li>
+            </ul>
+  
+            <!-- Stubs for other submenus -->
+            <ul class="mm-list" data-submenu="sme">
+              <li><a href="#" class="mm-link">Coming Soon</a></li>
+            </ul>
+            <ul class="mm-list" data-submenu="corporate">
+              <li><a href="#" class="mm-link">Coming Soon</a></li>
+            </ul>
+            <ul class="mm-list" data-submenu="financial-partner">
+              <li><a href="#" class="mm-link">Coming Soon</a></li>
+            </ul>
+            <ul class="mm-list" data-submenu="investor-relations">
+              <li><a href="#" class="mm-link">Coming Soon</a></li>
+            </ul>
+            <ul class="mm-list" data-submenu="sustainability">
+              <li><a href="#" class="mm-link">Coming Soon</a></li>
+            </ul>
+            <ul class="mm-list" data-submenu="about-us">
+              <li><a href="#" class="mm-link">Coming Soon</a></li>
+            </ul>
+            <ul class="mm-list" data-submenu="contact-us">
+              <li><a href="#" class="mm-link">Coming Soon</a></li>
+            </ul>
+            <ul class="mm-list" data-submenu="lang">
+              <li><a href="#" class="mm-link">EN</a></li>
+              <li><a href="#" class="mm-link">TH</a></li>
+            </ul>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+</div>
+
+    <!-- Component Assembler -->
+    
+    <!-- Header JS -->
+    <script src="../components/header/header.js"></script>
+    <script src="components/header/header.js"></script>
+</body>
+</html>
