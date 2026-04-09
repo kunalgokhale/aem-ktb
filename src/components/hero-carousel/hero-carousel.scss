@@ -3,8 +3,8 @@
 .hero-carousel {
   position: relative;
   overflow: hidden;
-  color: #fff;
-  height: clamp(360px, 60vh, 760px);
+  color: white;
+  height: clamp(360px, 40vw, 800px);
   background: #000;
 
   .hc-track {
@@ -44,7 +44,7 @@
       position: relative;
       z-index: 1;
       padding-block: 64px;
-      max-width: 600px;
+      max-width: 45%;
 
       .hc-heading {
         font-size: clamp(28px, 5vw, 4.5rem);
@@ -126,13 +126,13 @@
 /* Mobile tweaks */
 @media (max-width: 992px) {
   .hero-carousel {
-    min-height: 440px;
+    // min-height: 440px;
 
-    .hc-slide .hc-content {
-      margin-left: 16px;
-      margin-right: 16px;
-      margin-top: 18vh;
-      padding: 16px;
-    }
+    // .hc-slide .hc-content {
+    //   margin-left: 16px;
+    //   margin-right: 16px;
+    //   margin-top: 18vh;
+    //   padding: 16px;
+    // }
   }
 }
