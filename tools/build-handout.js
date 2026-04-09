@@ -25,6 +25,16 @@ function copyDirSync(src, dest) {
   }
 }
 
+function copyCssFilesSync(src, dest) {
+  if (!fs.existsSync(src)) return;
+  ensureDir(dest);
+  for (const entry of fs.readdirSync(src, { withFileTypes: true })) {
+    if (!entry.isFile()) continue;
+    if (!entry.name.toLowerCase().endsWith(".css")) continue;
+    fs.copyFileSync(path.join(src, entry.name), path.join(dest, entry.name));
+  }
+}
+
 function readFileSafe(p) {
   try {
     return fs.readFileSync(p, "utf8");
@@ -58,6 +68,16 @@ function injectComponent(html, id, componentHtml) {
   );
   if (!re.test(html)) return html;
   return html.replace(re, `$1\n${componentHtml}\n$3`);
+}
+
+function rewriteLocalPaths(content) {
+  if (!content) return content;
+
+  content = content.replace(/((?:src|href)=["'])(?:\.{1,2}\/)+components\//gi, "$1components/");
+  content = content.replace(/((?:src|href)=["'])(?:\.{1,2}\/)+scripts\//gi, "$1scripts/");
+  content = content.replace(/((?:src|href)=["'])(?:\.{1,2}\/)+styles\//gi, "$1styles/");
+
+  return content;
 }
 
 function compileSass() {
@@ -106,6 +126,7 @@ function main() {
   copyDirSync(path.join(srcDir, "assets"), path.join(distDir, "assets"));
   copyDirSync(path.join(srcDir, "components"), path.join(distDir, "components"));
   copyDirSync(path.join(srcDir, "scripts"), path.join(distDir, "scripts"));
+  copyCssFilesSync(path.join(srcDir, "styles"), path.join(distDir, "styles"));
 
   // Compile CSS to dist/main.css (expanded)
   const compiled = compileSass();
@@ -124,10 +145,32 @@ function main() {
   heroHtml = rewriteAssetUrls(heroHtml);
   html = injectComponent(html, "hero-carousel", heroHtml);
 
-  // Remove assembler for file:// usage and ensure component JS is loaded directly
+  // Inject key-features
+  let keyFeaturesHtml = readFileSafe(path.join(srcDir, "components", "key-features", "key-features.html"));
+  keyFeaturesHtml = rewriteAssetUrls(keyFeaturesHtml);
+  keyFeaturesHtml = rewriteLocalPaths(keyFeaturesHtml);
+  html = injectComponent(html, "key-features", keyFeaturesHtml);
+
+  // Inject faq
+  let faqHtml = readFileSafe(path.join(srcDir, "components", "faq", "faq.html"));
+  faqHtml = rewriteAssetUrls(faqHtml);
+  faqHtml = rewriteLocalPaths(faqHtml);
+  html = injectComponent(html, "faq", faqHtml);
+
+  // Inject downloads
+  let downloadsHtml = readFileSafe(path.join(srcDir, "components", "downloads", "downloads.html"));
+  downloadsHtml = rewriteAssetUrls(downloadsHtml);
+  downloadsHtml = rewriteLocalPaths(downloadsHtml);
+  html = injectComponent(html, "downloads", downloadsHtml);
+  
+  // Inject contact-us-cta
+  let contactUsCtaHtml = readFileSafe(path.join(srcDir, "components", "contact-us-cta", "contact-us-cta.html"));
+  contactUsCtaHtml = rewriteAssetUrls(contactUsCtaHtml);
+  contactUsCtaHtml = rewriteLocalPaths(contactUsCtaHtml);
+  html = injectComponent(html, "contact-us-cta", contactUsCtaHtml);
+
+  // Remove assembler for file:// usage
   html = removeAssemblerScript(html);
-  html = ensureScript(html, "components/header/header.js");
-  html = ensureScript(html, "components/hero-carousel/hero-carousel.js");
 
   // Fix CSS link(s) to point to dist/main.css
   html = html
@@ -136,6 +179,13 @@ function main() {
 
   // Also rewrite any stray asset paths in the page itself
   html = rewriteAssetUrls(html);
+  html = rewriteLocalPaths(html);
+
+  // Ensure component JS is loaded directly (paths are normalized above)
+  html = ensureScript(html, "components/header/header.js");
+  html = ensureScript(html, "components/hero-carousel/hero-carousel.js");
+  html = ensureScript(html, "components/key-features/key-features.js");
+  html = ensureScript(html, "components/faq/faq.js");
 
   // Write assembled page
   fs.writeFileSync(path.join(distDir, "index.html"), html, "utf8");

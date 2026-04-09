@@ -30,6 +30,7 @@ function bootComponents() {
         { id: "key-features", file: "key-features/key-features.html" },
         { id: "faq", file: "faq/faq.html" },
         { id: "downloads", file: "downloads/downloads.html" },
+        { id: "contact-us-cta", file: "contact-us-cta/contact-us-cta.html" },
         // Add more components here as needed
     ];
 

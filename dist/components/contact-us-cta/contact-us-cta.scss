@@ -1,0 +1,42 @@
+@use "../../styles/tokens" as *;
+
+.contact-us-cta {
+    background: $ktb-midnight;
+
+    .contact-us-btn {
+        flex: 1;
+        background: transparent;
+        border: none;
+        outline: none;
+        color: white;
+        padding: $size-30 0;
+        font-size: clamp($size-18, 4vw, $size-24);
+        gap: $size-12;
+        line-height: 1.35;
+
+        img.icon {
+            width: clamp($size-28, 5vw, $size-40);
+            height: clamp($size-28, 5vw, $size-40);
+        }
+
+        &:first-child {
+            border-right: 1px solid white;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .contact-us-cta {
+        .contact-us-btn {
+            flex-direction: column;
+
+            &:first-child {
+                padding-right: $size-16;
+            }
+
+            &:last-child {
+                padding-left: $size-16;
+            }
+        }
+    }
+}

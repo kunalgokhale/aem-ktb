@@ -106,6 +106,10 @@ textarea:not([rows]) {
 }
 
 /* Button Styles */
+button {
+  cursor: pointer;
+}
+
 .button {
   display: flex;
   align-items: center;
