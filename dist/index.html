@@ -8,15 +8,19 @@
 
     <!-- Global styles -->
     <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="../styles/splide.min.css" />
+    <link rel="stylesheet" href="../styles/splide-default.min.css" />
+    <!-- Scripts -->
+    <script src="../scripts/splide.min.js"></script>
   </head>
 
   <body>
-    <!-- Page Assembly (AEM-style stacking) -->
+    <!-- Header mount -->
     <div id="header">
 <!-- Inside your header component -->
 <header class="header">
   <div class="top-header">
-    <div class="container flex flex-center flex-between">
+    <div class="custom-container flex flex-center flex-between">
       <div class="flex gap-4">
         <a href="#" class="top-link active">Persoanl</a>
         <a href="#" class="top-link">SME</a>
@@ -28,7 +32,7 @@
     </div>
   </div>
   <div class="bottom-header">
-    <div class="container flex flex-between flex-center">
+    <div class="custom-container flex flex-between flex-center">
       <!-- Logo -->
       <div class="flex flex-left gap-2 logo-wrapper">
         <img id="logo" src="assets/images/logo-white.png" alt="" />
@@ -76,10 +80,14 @@
                       <a href="#" class="nav-link">Debit Card</a>
                     </li>
                     <li class="sub-menu-item">
-                      <a href="#" class="nav-link">Krungthai Travel Visa Platinum Card</a>
+                      <a href="#" class="nav-link"
+                        >Krungthai Travel Visa Platinum Card</a
+                      >
                     </li>
                     <li class="sub-menu-item">
-                      <a href="#" class="nav-link">Krungthai Travel UnionPay Debit Card</a>
+                      <a href="#" class="nav-link"
+                        >Krungthai Travel UnionPay Debit Card</a
+                      >
                     </li>
                     <li class="sub-menu-item">
                       <a href="#" class="nav-link">Cash Card and Top Up Card</a>
@@ -101,32 +109,47 @@
       </div>
       <div class="flex gap-2">
         <div class="cta">
-          <a href="#" class="button button-secondary download-cta">Krungthai NEXT
-            <img src="assets/images/download.png" alt="Download">
+          <a href="#" class="button button-secondary download-cta"
+            >Krungthai NEXT
+            <img src="assets/images/download.png" alt="Download" />
           </a>
         </div>
         <div class="mobile-menu-toggle-wrapper">
           <button class="mobile-menu-toggle button button-transparent mm-open">
-            <img src="assets/images/menu.png" alt="menu" class="icon-md" data-mm-open="true" />
+            <img
+              src="assets/images/menu.png"
+              alt="menu"
+              class="icon-md"
+              data-mm-open="true"
+            />
           </button>
-           <button class="mobile-menu-toggle button button-transparent mm-close" aria-label="Close" style="display: none;">
-            <img src="assets/images/close.png" alt="menu" class="icon-md" data-mm-open="true" />
+          <button
+            class="mobile-menu-toggle button button-transparent mm-close"
+            aria-label="Close"
+            style="display: none"
+          >
+            <img
+              src="assets/images/close.png"
+              alt="menu"
+              class="icon-md"
+              data-mm-open="true"
+            />
           </button>
         </div>
       </div>
-  
+
       <div class="mobile-menu-wrapper" aria-hidden="true">
         <div class="mm-top-header flex flex-center">
           <div class="header-item flex flex-center flex-col flex-1 gap-1">
-            <img src="assets/images/location.svg" alt="">
+            <img src="assets/images/location.svg" alt="" />
             <span>Serice Points</span>
           </div>
           <div class="header-item flex flex-center flex-col flex-1 gap-1">
-            <img src="assets/images/search.svg" alt="">
+            <img src="assets/images/search.svg" alt="" />
             <span>Find Information</span>
           </div>
           <div class="header-item flex flex-center flex-col flex-1 gap-1">
-            <img src="assets/images/contact-support.svg" alt="">
+            <img src="assets/images/contact-support.svg" alt="" />
             <span>Contact Us</span>
           </div>
         </div>
@@ -134,34 +157,90 @@
           <!-- Level 1 (root) -->
           <section class="mm-panel mm-level-1" aria-label="Main menu">
             <ul class="mm-list">
-              <li><button class="mm-item" data-submenu="personal"><span>Personal</span><span class="mm-chevron"><img
-                      src="assets/images/chevron-right.png" alt=""></span></button></li>
-              <li><button class="mm-item" data-submenu="sme"><span>SME</span><span class="mm-chevron"><img
-                      src="assets/images/chevron-right.png" alt=""></span></button></li>
-              <li><button class="mm-item" data-submenu="corporate"><span>Corporate</span><span class="mm-chevron"><img
-                      src="assets/images/chevron-right.png" alt=""></span></button></li>
-              <li><button class="mm-item" data-submenu="financial-partner"><span>Financial Partner</span><span
-                    class="mm-chevron"><img src="assets/images/chevron-right.png" alt=""></span></button></li>
-              <li><button class="mm-item" data-submenu="investor-relations"><span>Investor Relations</span><span
-                    class="mm-chevron"><img src="assets/images/chevron-right.png" alt=""></span></button></li>
-              <li><button class="mm-item" data-submenu="sustainability"><span>Sustainability</span><span
-                    class="mm-chevron"><img src="assets/images/chevron-right.png" alt=""></span></button></li>
-              <li><button class="mm-item" data-submenu="about-us"><span>About Us</span><span class="mm-chevron"><img
-                      src="assets/images/chevron-right.png" alt=""></span></button></li>
-              <li><button class="mm-item" data-submenu="contact-us"><span>Contact Us</span><span class="mm-chevron"><img
-                      src="assets/images/chevron-right.png" alt=""></span></button></li>
-              <li><button class="mm-item" data-submenu="lang"><span>EN</span><span class="mm-chevron"><img
-                      src="assets/images/chevron-right.png" alt=""></span></button></li>
+              <li>
+                <button class="mm-item" data-submenu="personal">
+                  <span>Personal</span
+                  ><span class="mm-chevron"
+                    ><img src="assets/images/chevron-right.png" alt=""
+                  /></span>
+                </button>
+              </li>
+              <li>
+                <button class="mm-item" data-submenu="sme">
+                  <span>SME</span
+                  ><span class="mm-chevron"
+                    ><img src="assets/images/chevron-right.png" alt=""
+                  /></span>
+                </button>
+              </li>
+              <li>
+                <button class="mm-item" data-submenu="corporate">
+                  <span>Corporate</span
+                  ><span class="mm-chevron"
+                    ><img src="assets/images/chevron-right.png" alt=""
+                  /></span>
+                </button>
+              </li>
+              <li>
+                <button class="mm-item" data-submenu="financial-partner">
+                  <span>Financial Partner</span
+                  ><span class="mm-chevron"
+                    ><img src="assets/images/chevron-right.png" alt=""
+                  /></span>
+                </button>
+              </li>
+              <li>
+                <button class="mm-item" data-submenu="investor-relations">
+                  <span>Investor Relations</span
+                  ><span class="mm-chevron"
+                    ><img src="assets/images/chevron-right.png" alt=""
+                  /></span>
+                </button>
+              </li>
+              <li>
+                <button class="mm-item" data-submenu="sustainability">
+                  <span>Sustainability</span
+                  ><span class="mm-chevron"
+                    ><img src="assets/images/chevron-right.png" alt=""
+                  /></span>
+                </button>
+              </li>
+              <li>
+                <button class="mm-item" data-submenu="about-us">
+                  <span>About Us</span
+                  ><span class="mm-chevron"
+                    ><img src="assets/images/chevron-right.png" alt=""
+                  /></span>
+                </button>
+              </li>
+              <li>
+                <button class="mm-item" data-submenu="contact-us">
+                  <span>Contact Us</span
+                  ><span class="mm-chevron"
+                    ><img src="assets/images/chevron-right.png" alt=""
+                  /></span>
+                </button>
+              </li>
+              <li>
+                <button class="mm-item" data-submenu="lang">
+                  <span>EN</span
+                  ><span class="mm-chevron"
+                    ><img src="assets/images/chevron-right.png" alt=""
+                  /></span>
+                </button>
+              </li>
             </ul>
           </section>
-  
+
           <!-- Level 2 (submenu) -->
           <section class="mm-panel mm-level-2" aria-label="Submenu">
             <div class="mm-header">
-              <button class="mm-back" aria-label="Back"><img src="assets/images/chevron-left-white.png" alt=""></button>
+              <button class="mm-back" aria-label="Back">
+                <img src="assets/images/chevron-left-white.png" alt="" />
+              </button>
               <div class="mm-title">Menu</div>
             </div>
-  
+
             <!-- Personal submenu -->
             <ul class="mm-list" data-submenu="personal">
               <li><a href="#" class="mm-link">Home</a></li>
@@ -174,7 +253,7 @@
               <li><a href="#" class="mm-link">Krungthai Wealth</a></li>
               <li><a href="#" class="mm-link">NPA</a></li>
             </ul>
-  
+
             <!-- Stubs for other submenus -->
             <ul class="mm-list" data-submenu="sme">
               <li><a href="#" class="mm-link">Coming Soon</a></li>
@@ -207,12 +286,103 @@
     </div>
   </div>
 </header>
+
 </div>
+
+    <!-- Hero mount -->
+    <div id="hero-carousel">
+<div
+  class="hero-carousel"
+  data-autoplay="false"
+  data-interval="6000"
+  role="region"
+  aria-roledescription="carousel"
+  aria-label="Hero carousel"
+>
+  <div class="hc-track">
+    <!-- Slide 1 -->
+    <article class="hc-slide is-active">
+      <div class="hc-media" aria-hidden="true">
+        <img
+          class="hidden-xs"
+          src="assets/images/hero-carousel-1.jpg"
+          alt="Krungthai – 100 Prestigious Accolades"
+        />
+        <img
+          class="visible-xs"
+          src="assets/images/hero-carousel-1-mobile.jpg"
+          alt="Digital Banking Innovation"
+        />
+      </div>
+      <div class="custom-container">
+        <div class="hc-content">
+          <h2 class="hc-heading">Celebrating Global Awards</h2>
+          <p class="hc-subheading">
+            Making History Toward 60 Years of Sustainable Excellence
+          </p>
+          <a href="#" class="hc-cta button button-primary">See the details</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Slide 2 (example) -->
+    <article class="hc-slide">
+      <div class="hc-media" aria-hidden="true">
+        <img
+          class="hidden-xs"
+          src="assets/images/hero-carousel-2.jpg"
+          alt="Digital Banking Innovation"
+        />
+        <img
+          class="visible-xs"
+          src="assets/images/hero-carousel-2-mobile.jpg"
+          alt="Digital Banking Innovation"
+        />
+      </div>
+      <div class="custom-container">
+        <div class="hc-content">
+          <h2 class="hc-heading">Digital Banking Innovation</h2>
+          <p class="hc-subheading">
+            Empowering everyone with simple, secure, and smart banking
+          </p>
+          <a href="#" class="hc-cta button button-primary">Explore more</a>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <!-- <div class="hc-controls">
+    <button class="hc-prev" aria-label="Previous slide">‹</button>
+    <button class="hc-next" aria-label="Next slide">›</button>
+  </div> -->
+
+  <div class="custom-container hc-dots-wrapper">
+    <div class="hc-dots" role="tablist" aria-label="Hero slides"></div>
+  </div>
+</div>
+
+</div>
+
+    <!-- Key Features mount -->
+    <div id="key-features"></div>
+    
+    <!-- FAQ mount -->
+    <div id="faq"></div>
+
+    <!-- Downloads mount -->
+    <div id="downloads"></div>
 
     <!-- Component Assembler -->
     
     <!-- Header JS -->
     <script src="../components/header/header.js"></script>
+    <!-- Hero Carousel JS -->
+    <script src="../components/hero-carousel/hero-carousel.js"></script>
+    <!-- Key Features JS -->
+    <script src="../components/key-features/key-features.js"></script>
+    <!-- FAQ JS -->
+    <script src="../components/faq/faq.js"></script>
     <script src="components/header/header.js"></script>
+  <script src="components/hero-carousel/hero-carousel.js"></script>
 </body>
 </html>

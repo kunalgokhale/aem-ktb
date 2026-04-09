@@ -27,6 +27,9 @@ function bootComponents() {
     const components = [
         { id: "header", file: "header/header.html" },
         { id: "hero-carousel", file: "hero-carousel/hero-carousel.html" },
+        { id: "key-features", file: "key-features/key-features.html" },
+        { id: "faq", file: "faq/faq.html" },
+        { id: "downloads", file: "downloads/downloads.html" },
         // Add more components here as needed
     ];
 

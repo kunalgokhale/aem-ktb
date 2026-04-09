@@ -1,0 +1,140 @@
+@use "../../styles/tokens" as *;
+
+.downloads {
+    background: #fff;
+    padding-block: $size-24 $size-40;
+    overflow-x: visible;
+
+    .downloads-group+.downloads-group {
+        margin-top: $size-24;
+    }
+
+    .downloads-group__title {
+        color: $ktb-blue;
+        font-weight: 400;
+        font-size: clamp($size-20, 2vw, $size-24);
+        margin: 0 0 $size-12;
+    }
+
+    .downloads-divider {
+        height: 1px;
+        background: rgba(0, 0, 0, 0.1);
+        margin-bottom: $size-8;
+    }
+
+    .downloads-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .downloads-item {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.2s ease-in-out;
+
+        &:hover {
+            box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .downloads-link {
+        display: grid;
+        grid-template-columns: 44px 1fr auto;
+        align-items: center;
+        gap: $size-16;
+        padding: $size-12 $size-16;
+        text-decoration: none;
+        color: inherit;
+        transition: transform 0.2s ease-in-out;
+    }
+
+    .downloads-file {
+        width: 36px;
+        height: 36px;
+        border-radius: $size-4;
+        position: relative;
+        display: grid;
+        place-items: center;
+    }
+
+    .downloads-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        min-width: 0;
+    }
+
+    .downloads-name {
+        color: #4a4a4a;
+        font-size: clamp($size-14, 2vw, $size-18);
+        line-height: 1.4;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .downloads-meta {
+        color: #9a9a9a;
+        font-size: clamp($size-12, 2vw, $size-16);
+        line-height: 1.4;
+    }
+
+    .downloads-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: $size-8;
+        color: #5a5a5a;
+        font-size: clamp($size-14, 2vw, $size-18);
+        white-space: nowrap;
+        transition: color 0.2s ease-in-out;
+    }
+
+    .downloads-cta__icon {
+        width: $size-20;
+        height: $size-20;
+        border-radius: 50%;
+        background: $ktb-blue;
+        position: relative;
+        flex: 0 0 auto;
+    }
+
+    .downloads-link:hover {
+        // .downloads-name {
+        //     text-decoration: underline;
+        //     text-underline-offset: 3px;
+        // }
+
+        .downloads-cta {
+            color: $ktb-blue;
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .downloads {
+        .downloads-link {
+            grid-template-columns: 40px 1fr;
+            grid-template-areas:
+                "icon text"
+                "cta cta";
+            align-items: start;
+            row-gap: $size-8;
+        }
+
+        .downloads-file {
+            grid-area: icon;
+            width: 32px;
+            height: 32px;
+        }
+
+        .downloads-text {
+            grid-area: text;
+        }
+
+        .downloads-cta {
+            grid-area: cta;
+            padding-left: calc(40px + #{$size-16});
+        }
+    }
+}

@@ -1,0 +1,107 @@
+@use "../../styles/tokens" as *;
+
+.faq {
+    background: #fff;
+    padding-block: $size-32 $size-40;
+
+    .faq__title {
+        color: $ktb-blue;
+        text-align: center;
+        font-weight: 400;
+        font-size: clamp(1.875rem, 3vw, 2.5rem);
+        margin: 0 0 28px;
+    }
+
+    .faq-group+.faq-group {
+        margin-top: $size-32;
+    }
+
+    .faq-group__title {
+        color: $ktb-blue;
+        font-weight: 400;
+        font-size: clamp($size-20, 2vw, $size-24);
+        margin: 0 0 $size-12;
+    }
+
+    .faq-list {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-item {
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    .faq-item__toggle {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: $size-12;
+        padding: $size-12 0;
+        background: transparent;
+        border: none;
+        text-align: left;
+        cursor: pointer;
+        color: inherit;
+    }
+
+    .faq-item__q {
+        flex: 0 0 auto;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: $ktb-blue;
+        color: #fff;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 1;
+    }
+
+    .faq-item__question {
+        flex: 1 1 auto;
+        font-size: clamp($size-14, 2vw, $size-18);
+        color: #6e6e6e;
+    }
+
+    .faq-item__chevron {
+        flex: 0 0 auto;
+        width: $size-24;
+        height: $size-24;
+        transform: rotate(0deg);
+        transition: transform 200ms ease;
+    }
+
+    .faq-item__content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 250ms ease;
+        will-change: max-height;
+    }
+
+    .faq-item__answer {
+        overflow: hidden;
+        padding: $size-16 0 $size-16 calc(28px + #{$size-12});
+        color: #333;
+        background: #eee;
+        font-size: clamp($size-14, 2vw, $size-16);
+        line-height: 1.6;
+    }
+
+    .faq-item.is-open {
+        .faq-item__chevron {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .faq {
+        padding-block: $size-24 $size-32;
+
+        .faq-item__answer {
+            padding-left: calc(28px + #{$size-8});
+        }
+    }
+}
