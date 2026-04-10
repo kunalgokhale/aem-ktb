@@ -169,6 +169,12 @@ function main() {
   contactUsCtaHtml = rewriteLocalPaths(contactUsCtaHtml);
   html = injectComponent(html, "contact-us-cta", contactUsCtaHtml);
 
+  // Inject po-carousel
+  let poCarouselHtml = readFileSafe(path.join(srcDir, "components", "po-carousel", "po-carousel.html"));
+  poCarouselHtml = rewriteAssetUrls(poCarouselHtml);
+  poCarouselHtml = rewriteLocalPaths(poCarouselHtml);
+  html = injectComponent(html, "po-carousel", poCarouselHtml);
+
   // Remove assembler for file:// usage
   html = removeAssemblerScript(html);
 
@@ -186,6 +192,7 @@ function main() {
   html = ensureScript(html, "components/hero-carousel/hero-carousel.js");
   html = ensureScript(html, "components/key-features/key-features.js");
   html = ensureScript(html, "components/faq/faq.js");
+  html = ensureScript(html, "components/po-carousel/po-carousel.js");
 
   // Write assembled page
   fs.writeFileSync(path.join(distDir, "index.html"), html, "utf8");

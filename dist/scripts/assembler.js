@@ -31,6 +31,7 @@ function bootComponents() {
         { id: "faq", file: "faq/faq.html" },
         { id: "downloads", file: "downloads/downloads.html" },
         { id: "contact-us-cta", file: "contact-us-cta/contact-us-cta.html" },
+        { id: "po-carousel", file: "po-carousel/po-carousel.html" },
         // Add more components here as needed
     ];
 

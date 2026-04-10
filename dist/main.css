@@ -1635,6 +1635,212 @@
     padding-left: 1rem;
   }
 }
+.po-carousel {
+  background: #77C3E3;
+  padding-block: 2.5rem;
+  overflow: hidden;
+  --po-carousel-padding: 0px;
+}
+.po-carousel .po-carousel__title {
+  color: #fff;
+  font-weight: 400;
+  font-size: clamp(1.875rem, 3vw, 2.5rem);
+  margin: 0 0 28px;
+}
+.po-carousel .po-splide .splide__track {
+  overflow: visible;
+}
+.po-carousel .po-splide .splide__pagination {
+  position: static;
+  justify-content: flex-start;
+  padding-block: 0;
+  padding-inline: var(--po-carousel-padding);
+  margin: 0.875rem 0 0;
+  gap: 8px;
+}
+.po-carousel .po-splide .splide__pagination__page {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  opacity: 1;
+  background: transparent;
+  border: 1px solid #002140;
+  transform: none;
+  margin: 0;
+}
+.po-carousel .po-splide .splide__pagination__page.is-active {
+  background: #002140;
+}
+.po-carousel .po-card {
+  background: #fff;
+  border-radius: 0.375rem;
+  overflow: hidden;
+  height: 100%;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  cursor: default;
+}
+.po-carousel .po-card:hover .po-card__media img {
+  transform: scale(1.1);
+}
+.po-carousel .po-card__action {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: inherit;
+  text-decoration: none;
+}
+.po-carousel .po-card__action:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 4px;
+  border-radius: 0.375rem;
+}
+.po-carousel .po-card__media {
+  height: 160px;
+  background: #e9eef3;
+  position: relative;
+  overflow: hidden;
+}
+.po-carousel .po-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: all 0.3s ease-in-out;
+}
+.po-carousel .po-card__play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background: rgba(0, 0, 0, 0.12);
+  z-index: 10;
+}
+.po-carousel .po-card__play::before {
+  content: "";
+  width: 54px;
+  height: 54px;
+  border-radius: 27px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+}
+.po-carousel .po-card__play::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 9px solid transparent;
+  border-bottom: 9px solid transparent;
+  border-left: 14px solid rgba(255, 255, 255, 0.9);
+  transform: translateX(2px);
+}
+.po-carousel .po-card__body {
+  padding: 0.75rem 0.875rem 0.875rem;
+}
+.po-carousel .po-card__meta {
+  margin: 0 0 6px;
+  color: #00A3E4;
+  font-size: clamp(0.75rem, 2vw, 0.875rem);
+  line-height: 1.35;
+}
+.po-carousel .po-card__headline {
+  margin: 0;
+  color: #2b5f86;
+  font-weight: 400;
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
+  line-height: 1.35;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 2.7em;
+}
+.po-carousel .po-carousel__cta {
+  margin: 1.5rem auto 0;
+  background: #002140;
+  color: #fff;
+  border-radius: 0.375rem;
+  padding-inline: 1.5rem;
+  gap: 0.75rem;
+  text-decoration: none;
+  border: none;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+.po-carousel .po-carousel__cta:hover {
+  filter: brightness(1.05);
+}
+
+.po-video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 3000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 200ms ease;
+}
+
+.po-video-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.po-video-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.po-video-modal__panel {
+  position: relative;
+  width: min(960px, 100vw - 32px);
+  margin: 8vh auto 0;
+  background: #000;
+  border-radius: 0.375rem;
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.35);
+}
+
+.po-video-modal__close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 22px;
+  line-height: 40px;
+  cursor: pointer;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.po-video-modal__content {
+  aspect-ratio: 16/9;
+  width: 100%;
+}
+
+.po-video-modal__content video {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+@media (max-width: 600px) {
+  .po-carousel {
+    padding-block: 2rem;
+  }
+}
 /* Box sizing rules */
 *,
 *::before,
